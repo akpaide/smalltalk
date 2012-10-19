@@ -5,8 +5,8 @@ package org.zkoss.springdemo.web.model;
 
 import java.util.List;
 
+import org.zkoss.springdemo.bean.Product;
 import org.zkoss.springdemo.model.ProductDAO;
-import org.zkoss.springdemo.model.bean.Product;
 
 /**
  * @author Ian YT Tsai (Zanyking)

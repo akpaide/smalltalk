@@ -7,8 +7,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.zkoss.springdemo.model.bean.CartItem;
-import org.zkoss.springdemo.model.bean.Product;
+import org.zkoss.springdemo.bean.CartItem;
+import org.zkoss.springdemo.bean.Product;
 import org.zkoss.springdemo.web.OverQuantityException;
 
 /**

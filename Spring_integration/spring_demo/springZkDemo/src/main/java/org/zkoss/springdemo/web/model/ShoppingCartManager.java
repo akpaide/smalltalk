@@ -19,9 +19,9 @@ package org.zkoss.springdemo.web.model;
 import java.io.Serializable;
 import java.util.List;
 
+import org.zkoss.springdemo.bean.CartItem;
+import org.zkoss.springdemo.bean.Product;
 import org.zkoss.springdemo.model.CartitemDAO;
-import org.zkoss.springdemo.model.bean.CartItem;
-import org.zkoss.springdemo.model.bean.Product;
 import org.zkoss.springdemo.web.OverQuantityException;
 
 /**

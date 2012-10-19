@@ -1,4 +1,4 @@
-package org.zkoss.springdemo.model.bean;
+package org.zkoss.springdemo.bean;
 
 import java.io.Serializable;
 

@@ -2,7 +2,7 @@ package org.zkoss.springdemo.web.ui.ctrl;
 
 import java.util.HashMap;
 
-import org.zkoss.springdemo.model.bean.Product;
+import org.zkoss.springdemo.bean.Product;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.IdSpace;
 import org.zkoss.zk.ui.event.Event;

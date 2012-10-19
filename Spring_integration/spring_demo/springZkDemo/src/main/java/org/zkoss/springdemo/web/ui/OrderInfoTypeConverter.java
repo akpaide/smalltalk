@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 
 import org.zkoss.bind.BindContext;
 import org.zkoss.bind.Converter;
-import org.zkoss.springdemo.model.bean.Order;
+import org.zkoss.springdemo.bean.Order;
 import org.zkoss.zk.ui.Component;
 
 /**

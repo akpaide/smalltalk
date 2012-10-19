@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
-import org.zkoss.springdemo.model.bean.User;
+import org.zkoss.springdemo.bean.User;
 
 
 /**

@@ -5,9 +5,9 @@ package org.zkoss.springdemo.web.model;
 
 import java.util.List;
 
+import org.zkoss.springdemo.bean.CartItem;
+import org.zkoss.springdemo.bean.Order;
 import org.zkoss.springdemo.model.OrderDAO;
-import org.zkoss.springdemo.model.bean.CartItem;
-import org.zkoss.springdemo.model.bean.Order;
 
 /**
  * @author Ian YT Tsai (Zanyking)

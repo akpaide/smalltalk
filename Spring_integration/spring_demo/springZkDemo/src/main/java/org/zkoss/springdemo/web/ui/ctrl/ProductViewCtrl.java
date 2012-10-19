@@ -3,7 +3,7 @@ package org.zkoss.springdemo.web.ui.ctrl;
 import java.util.List;
 
 import org.zkoss.bind.BindUtils;
-import org.zkoss.springdemo.model.bean.Product;
+import org.zkoss.springdemo.bean.Product;
 import org.zkoss.springdemo.web.OverQuantityException;
 import org.zkoss.springdemo.web.model.ProductManager;
 import org.zkoss.springdemo.web.model.ShoppingCartSessionImpl;

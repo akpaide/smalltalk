@@ -14,11 +14,11 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.zkoss.springdemo.model.bean.CartItem;
-import org.zkoss.springdemo.model.bean.Order;
-import org.zkoss.springdemo.model.bean.OrderItem;
-import org.zkoss.springdemo.model.bean.Product;
-import org.zkoss.springdemo.model.bean.User;
+import org.zkoss.springdemo.bean.CartItem;
+import org.zkoss.springdemo.bean.Order;
+import org.zkoss.springdemo.bean.OrderItem;
+import org.zkoss.springdemo.bean.Product;
+import org.zkoss.springdemo.bean.User;
 
 
 /**

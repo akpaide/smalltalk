@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 import org.zkoss.bind.BindContext;
 import org.zkoss.bind.Converter;
-import org.zkoss.springdemo.model.bean.OrderItem;
+import org.zkoss.springdemo.bean.OrderItem;
 import org.zkoss.zk.ui.Component;
 
 /**
