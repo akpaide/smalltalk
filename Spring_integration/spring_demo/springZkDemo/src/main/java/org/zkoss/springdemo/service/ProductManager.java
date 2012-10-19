@@ -20,12 +20,6 @@ public class ProductManager {
 	@Autowired
 	private ProductDAO productDao;
 
-	public ProductDAO getProductDao() {
-		return productDao;
-	}
-	public void setProductDao(ProductDAO productDao) {
-		this.productDao = productDao;
-	}
 	public List<Product> findAllAvailable() {
 		return productDao.findAllAvailable();
 	}

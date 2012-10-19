@@ -7,6 +7,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 import org.zkoss.springdemo.bean.CartItem;
 import org.zkoss.springdemo.bean.Product;
 import org.zkoss.springdemo.web.OverQuantityException;
@@ -16,6 +19,8 @@ import org.zkoss.springdemo.web.OverQuantityException;
  * In this case, shopping cart won't be stored in the 
  * @author Ian Y.T Tsai(zanyking)
  */
+@Component("shoppingCart")
+@Scope("session")
 public class ShoppingCartSessionImpl implements ShoppingCart, Serializable {
 	
 	private static final long serialVersionUID = 464821961483850854L;
@@ -23,19 +28,12 @@ public class ShoppingCartSessionImpl implements ShoppingCart, Serializable {
 	private Map<Long, CartItem> items = 
 		Collections.synchronizedMap(new LinkedHashMap<Long, CartItem>());
 
+	@Autowired
 	private UserCredentialManager userCredentialManager;
 	
 	private String description;
 	
 	
-	
-	public UserCredentialManager getUserCredentialManager() {
-		return userCredentialManager;
-	}
-	
-	public void setUserCredentialManager(UserCredentialManager userCredentialManager) {
-		this.userCredentialManager = userCredentialManager;
-	}
 	
 	public String getDescription() {
 		return description;

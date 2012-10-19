@@ -19,7 +19,7 @@ package org.zkoss.springdemo.web.ui;
 import org.zkoss.springdemo.service.UserCredentialManager;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.Sessions;
-import org.zkoss.zkplus.cdi.DelegatingVariableResolver;
+import org.zkoss.zkplus.spring.DelegatingVariableResolver;
 import org.zkoss.zul.Button;
 
 /**

@@ -2,6 +2,10 @@ package org.zkoss.springdemo.service;
 
 import java.io.Serializable;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Component;
 import org.zkoss.springdemo.bean.User;
 import org.zkoss.springdemo.dao.UserDAO;
 
@@ -12,23 +16,17 @@ import org.zkoss.springdemo.dao.UserDAO;
  *         This class provides a class which manages user authentication
  * 
  */
+@Component
+@Scope(value="session")
 public class UserCredentialManager implements Serializable{
 
 	private static final long serialVersionUID = 4789033910089502945L;
 
-	public UserCredentialManager(){}
-	
 	private User user;
 
+	@Autowired
 	private UserDAO userDao;
 	
-	public UserDAO getUserDao() {
-		return userDao;
-	}
-	public void setUserDao(UserDAO userDao) {
-		this.userDao = userDao;
-	}
-
 	public synchronized void login(String name, String password) {
 		User tempUser = userDao.findUserByName(name);
 		if (tempUser != null && tempUser.getPassword().equals(password)) {

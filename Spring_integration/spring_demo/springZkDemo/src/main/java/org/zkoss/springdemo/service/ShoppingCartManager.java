@@ -53,7 +53,6 @@ public class ShoppingCartManager implements ShoppingCart, Serializable{
 	}
 	public List<CartItem> getItems() {
 		List<CartItem> citems = cartitemDAO.findByUser(getUserId());
-		System.out.println(">>>>> shoppingcart getItems: size="+citems.size());
 		return citems;
 	}
 

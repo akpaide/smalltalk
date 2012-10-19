@@ -23,21 +23,4 @@
 	<!-- enable use of @Transactional -->
 	<tx:annotation-driven transaction-manager="txManager" />
 	
-	
-	<bean id="userCredentialManager" scope="session"
-		class="org.zkoss.springdemo.service.UserCredentialManager">
-		<aop:scoped-proxy/>
-		<property name="UserDao" ref="userDAO" />
-	</bean>
-	
-	<bean id="shoppingCart" scope="session"
-		class="org.zkoss.springdemo.service.ShoppingCartSessionImpl">
-		<property name="userCredentialManager" ref="userCredentialManager" />
-	</bean>
-	
-	<bean id="userOrderManager" scope="session"
-		class="org.zkoss.springdemo.service.UserOrderManager">
-		<property name="orderDao" ref="orderDAO" />
-		<property name="userCredentialManager" ref="userCredentialManager" />
-	</bean>
 </beans>
