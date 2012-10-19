@@ -20,7 +20,7 @@
 	<!-- ***** Declares where the Spring application context setting is ***** -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:META-INF/spring/app-context.xml</param-value>
+		<param-value>WEB-INF/applicationContext.xml</param-value>
 	</context-param>
 
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
@@ -32,6 +32,7 @@
 	</listener>
 
 	<!-- 2012.09.24
+	 -->
 	<filter>
 		<filter-name>oemInViewFilter</filter-name>
 		<filter-class>
@@ -46,7 +47,6 @@
 		<filter-name>oemInViewFilter</filter-name>
 		<url-pattern>*</url-pattern>
 	</filter-mapping>
-	 -->
 
 
 

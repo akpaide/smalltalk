@@ -72,7 +72,6 @@ public class ShoppingCartManager implements ShoppingCart, Serializable{
 		}
 		cItem.add(amount);
 		cartitemDAO.insertUpdate(cItem);
-		System.out.println(">>>> cartitemDAO.insertUpdate: "+cItem);
 	}
 
 	private static void validate(CartItem item, Product prod, int amount)
