@@ -23,13 +23,14 @@ import org.zkoss.springdemo.web.OverQuantityException;
 @Scope("session")
 public class ShoppingCartSessionImpl implements ShoppingCart, Serializable {
 	
+	@Autowired
+	private UserCredentialManager userCredentialManager;
+
 	private static final long serialVersionUID = 464821961483850854L;
 
 	private Map<Long, CartItem> items = 
 		Collections.synchronizedMap(new LinkedHashMap<Long, CartItem>());
 
-	@Autowired
-	private UserCredentialManager userCredentialManager;
 	
 	private String description;
 	
