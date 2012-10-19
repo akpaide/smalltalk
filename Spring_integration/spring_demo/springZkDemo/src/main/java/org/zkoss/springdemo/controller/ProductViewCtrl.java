@@ -1,4 +1,4 @@
-package org.zkoss.springdemo.web.ui.ctrl;
+package org.zkoss.springdemo.controller;
 
 import java.util.List;
 
