@@ -31,15 +31,4 @@ public class WorkbenchInit implements Initiator {
 			Executions.getCurrent().sendRedirect("login.zul");
 		}
 	}
-
-	public boolean doCatch(Throwable parsingError) throws Exception {
-		return false;
-	}
-
-	public void doAfterCompose(Page page) throws Exception {
-	}
-
-	public void doFinally() throws Exception {
-	}
-
 }

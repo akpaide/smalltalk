@@ -17,7 +17,6 @@
 	
 	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 	</bean>
-
 	
 	<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="emf" />
@@ -25,12 +24,6 @@
 	<!-- enable use of @Transactional -->
 	<tx:annotation-driven transaction-manager="txManager" />
 	
-	<!--  -->
-	
-	<bean id="productManager" scope="application"
-		class="org.zkoss.springdemo.service.ProductManager">
-		<property name="productDao" ref="productDAO" />
-	</bean>
 	
 	<bean id="userCredentialManager" scope="session"
 		class="org.zkoss.springdemo.service.UserCredentialManager">
