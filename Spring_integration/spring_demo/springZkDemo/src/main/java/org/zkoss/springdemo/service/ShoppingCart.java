@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.zkoss.springdemo.web.model;
+package org.zkoss.springdemo.service;
 
 import java.util.List;
 

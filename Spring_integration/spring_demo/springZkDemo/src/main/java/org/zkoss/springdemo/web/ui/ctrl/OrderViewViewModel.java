@@ -8,7 +8,7 @@ import org.zkoss.bind.annotation.GlobalCommand;
 import org.zkoss.bind.annotation.NotifyChange;
 import org.zkoss.springdemo.bean.CartItem;
 import org.zkoss.springdemo.bean.Order;
-import org.zkoss.springdemo.web.model.UserOrderManager;
+import org.zkoss.springdemo.service.UserOrderManager;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 /**

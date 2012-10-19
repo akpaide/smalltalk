@@ -10,37 +10,41 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<context:component-scan base-package="org.zkoss.springdemo.model, org.zkoss.springdemo.web.model" />
+
+	<!-- AutowiredAnnotationBeanPostProcessor and CommonAnnotationBeanPostProcessor are both 
+	included implicitly-->
+	<context:component-scan base-package="org.zkoss.springdemo" />
 	
 	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="breakfast" />
 	</bean>
 
+	
 	<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="emf" />
 	</bean>
-	
+	<!-- enable use of @Transactional -->
 	<tx:annotation-driven transaction-manager="txManager" />
 	
+	<!--  -->
 	
 	<bean id="productManager" scope="application"
-		class="org.zkoss.springdemo.web.model.ProductManager">
+		class="org.zkoss.springdemo.service.ProductManager">
 		<property name="productDao" ref="productDAO" />
 	</bean>
 	
 	<bean id="userCredentialManager" scope="session"
-		class="org.zkoss.springdemo.web.model.UserCredentialManager">
+		class="org.zkoss.springdemo.service.UserCredentialManager">
 		<aop:scoped-proxy/>
 		<property name="UserDao" ref="userDAO" />
 	</bean>
 	
 	<bean id="shoppingCart" scope="session"
-		class="org.zkoss.springdemo.web.model.ShoppingCartSessionImpl">
+		class="org.zkoss.springdemo.service.ShoppingCartSessionImpl">
 		<property name="userCredentialManager" ref="userCredentialManager" />
 	</bean>
 	
 	<bean id="userOrderManager" scope="session"
-		class="org.zkoss.springdemo.web.model.UserOrderManager">
+		class="org.zkoss.springdemo.service.UserOrderManager">
 		<property name="orderDao" ref="orderDAO" />
 		<property name="userCredentialManager" ref="userCredentialManager" />
 	</bean>

@@ -9,7 +9,7 @@ import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.GlobalCommand;
 import org.zkoss.bind.annotation.NotifyChange;
 import org.zkoss.springdemo.bean.CartItem;
-import org.zkoss.springdemo.web.model.ShoppingCart;
+import org.zkoss.springdemo.service.ShoppingCart;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 /**

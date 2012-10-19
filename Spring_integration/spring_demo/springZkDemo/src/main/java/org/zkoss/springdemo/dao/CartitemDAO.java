@@ -14,7 +14,7 @@ Copyright (C) 2010 Potix Corporation. All Rights Reserved.
 	it will be useful, but WITHOUT ANY WARRANTY.
 }}IS_RIGHT
 */
-package org.zkoss.springdemo.model;
+package org.zkoss.springdemo.dao;
 
 import java.util.List;
 
@@ -98,11 +98,7 @@ public class CartitemDAO {
 	public void clear(final Long userId){
 		Query query = em.createQuery("DELETE FROM CartItem c WHERE c.userId = :userId");
 		query.setParameter("userId", userId);
-		System.out.println(">>>> CartitemDAO clear() em: "+em);
 		int deleted = query.executeUpdate();
-		System.out.println(">>>>  DELETE FROM cartitems c WHERE " +
-				"c.userId = "+userId+"  deleted:"+deleted);
-		
 	}
 	
 }

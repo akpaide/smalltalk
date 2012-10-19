@@ -1,4 +1,4 @@
-package org.zkoss.springdemo.model;
+package org.zkoss.springdemo.dao;
 
 import java.util.List;
 
@@ -40,7 +40,6 @@ public class ProductDAO {
 	}
 
 	public List<Product> findAllAvailable() {
-		System.out.println("ProductDAO's EM:"+em);
         return Querys.findEquals(Product.class, "available", true, em);
 	}
 	

@@ -14,14 +14,14 @@ Copyright (C) 2010 Potix Corporation. All Rights Reserved.
 	it will be useful, but WITHOUT ANY WARRANTY.
 }}IS_RIGHT
 */
-package org.zkoss.springdemo.web.model;
+package org.zkoss.springdemo.service;
 
 import java.io.Serializable;
 import java.util.List;
 
 import org.zkoss.springdemo.bean.CartItem;
 import org.zkoss.springdemo.bean.Product;
-import org.zkoss.springdemo.model.CartitemDAO;
+import org.zkoss.springdemo.dao.CartitemDAO;
 import org.zkoss.springdemo.web.OverQuantityException;
 
 /**

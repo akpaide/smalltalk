@@ -16,7 +16,7 @@ Copyright (C) 2010 Potix Corporation. All Rights Reserved.
 */
 package org.zkoss.springdemo.web.ui;
 
-import org.zkoss.springdemo.web.model.UserCredentialManager;
+import org.zkoss.springdemo.service.UserCredentialManager;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zkplus.cdi.DelegatingVariableResolver;

@@ -1,4 +1,4 @@
-package org.zkoss.springdemo.model;
+package org.zkoss.springdemo.dao;
 
 
 import java.util.ArrayList;
@@ -53,7 +53,6 @@ public class OrderDAO {
 	public Order createOrder(User user, List<CartItem> items, String description) {
 		Order order = new Order(null, user.getId(), Order.PROCESSING, new Date(), description);
 		em.persist(order);	
-		System.out.println("createOrder persised: "+order+" id="+order.getId());
 		for (CartItem item : items) {
 			Product prod = item.getProduct();
 			OrderItem oItem = new OrderItem(null, 
@@ -63,7 +62,6 @@ public class OrderDAO {
 					prod.getPrice(), 
 					item.getAmount());
 			em.persist(oItem);
-			System.out.println("oItem persised: "+oItem+" id="+oItem.getId());
 			order.addItem(oItem);
 		}
 		return order;

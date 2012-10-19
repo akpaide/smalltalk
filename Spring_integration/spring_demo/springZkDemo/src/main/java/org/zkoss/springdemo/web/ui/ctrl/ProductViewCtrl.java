@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.zkoss.bind.BindUtils;
 import org.zkoss.springdemo.bean.Product;
+import org.zkoss.springdemo.service.ProductManager;
+import org.zkoss.springdemo.service.ShoppingCartSessionImpl;
 import org.zkoss.springdemo.web.OverQuantityException;
-import org.zkoss.springdemo.web.model.ProductManager;
-import org.zkoss.springdemo.web.model.ShoppingCartSessionImpl;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;

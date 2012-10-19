@@ -1,6 +1,6 @@
 package org.zkoss.springdemo.web.ui.ctrl;
 
-import org.zkoss.springdemo.web.model.UserCredentialManager;
+import org.zkoss.springdemo.service.UserCredentialManager;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;

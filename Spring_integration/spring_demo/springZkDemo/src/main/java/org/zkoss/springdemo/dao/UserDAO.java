@@ -1,4 +1,4 @@
-package org.zkoss.springdemo.model;
+package org.zkoss.springdemo.dao;
 
 import java.util.List;
 

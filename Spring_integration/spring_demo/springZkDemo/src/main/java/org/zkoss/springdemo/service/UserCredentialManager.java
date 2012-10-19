@@ -1,9 +1,9 @@
-package org.zkoss.springdemo.web.model;
+package org.zkoss.springdemo.service;
 
 import java.io.Serializable;
 
 import org.zkoss.springdemo.bean.User;
-import org.zkoss.springdemo.model.UserDAO;
+import org.zkoss.springdemo.dao.UserDAO;
 
 
 /**

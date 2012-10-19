@@ -14,7 +14,7 @@ Copyright (C) 2010 Potix Corporation. All Rights Reserved.
 	it will be useful, but WITHOUT ANY WARRANTY.
 }}IS_RIGHT
 */
-package org.zkoss.springdemo.web.model;
+package org.zkoss.springdemo.service;
 
 /**
  * @author Ian Y.T Tsai(zanyking)

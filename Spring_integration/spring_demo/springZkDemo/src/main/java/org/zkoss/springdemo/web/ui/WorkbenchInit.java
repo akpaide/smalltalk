@@ -2,7 +2,7 @@ package org.zkoss.springdemo.web.ui;
 
 import java.util.Map;
 
-import org.zkoss.springdemo.web.model.UserCredentialManager;
+import org.zkoss.springdemo.service.UserCredentialManager;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.Page;
 import org.zkoss.zk.ui.util.Initiator;

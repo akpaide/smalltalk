@@ -1,12 +1,12 @@
 /**
  * 
  */
-package org.zkoss.springdemo.web.model;
+package org.zkoss.springdemo.service;
 
 import java.util.List;
 
 import org.zkoss.springdemo.bean.Product;
-import org.zkoss.springdemo.model.ProductDAO;
+import org.zkoss.springdemo.dao.ProductDAO;
 
 /**
  * @author Ian YT Tsai (Zanyking)
