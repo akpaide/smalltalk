@@ -1,7 +1,7 @@
 <?page title="ZK Store - Login"?>
 <window id="loginWin" border="normal" width="300px"
 	title="You are using: ${desktop.webApp.version}"
-	apply="org.zkoss.springdemo.web.ui.ctrl.LoginViewCtrl" mode="overlapped"
+	apply="org.zkoss.springdemo.controller.LoginViewCtrl" mode="overlapped"
 	position="center,center">
 	<grid>
 		<rows>

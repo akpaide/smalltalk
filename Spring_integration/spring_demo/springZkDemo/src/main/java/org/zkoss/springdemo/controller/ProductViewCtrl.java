@@ -44,7 +44,6 @@ public class ProductViewCtrl extends SelectorComposer<Div> {
 	@Override
 	public void doAfterCompose(Div comp) throws Exception {
 		super.doAfterCompose(comp);
-
 		List<Product> prods = productManager.findAllAvailable();
 
 		ListModelList<Product> prodModel = new ListModelList<Product>(prods);
