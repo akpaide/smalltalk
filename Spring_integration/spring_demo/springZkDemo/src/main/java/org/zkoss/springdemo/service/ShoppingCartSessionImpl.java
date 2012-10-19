@@ -81,7 +81,7 @@ public class ShoppingCartSessionImpl implements ShoppingCart, Serializable {
 	}
 
 	public void remove(CartItem cartItem) {
-		items.remove(cartItem);
+		items.remove(cartItem.getProduct().getId());
 	}
 
 	public void clear() {
