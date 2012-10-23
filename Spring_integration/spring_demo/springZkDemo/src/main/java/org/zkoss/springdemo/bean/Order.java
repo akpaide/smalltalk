@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -45,7 +46,7 @@ public class Order {
 	private String description;
 	private Float adjust;
 
-	@OneToMany(mappedBy="orderId",targetEntity=OrderItem.class)
+	@OneToMany(mappedBy="orderId",fetch=FetchType.EAGER)
 	private List<OrderItem> items = new ArrayList<OrderItem>();
 
 	@Temporal(TemporalType.TIMESTAMP)
