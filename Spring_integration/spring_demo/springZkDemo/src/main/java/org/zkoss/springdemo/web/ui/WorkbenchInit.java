@@ -6,7 +6,7 @@ import org.zkoss.springdemo.service.UserCredentialManager;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.Page;
 import org.zkoss.zk.ui.util.Initiator;
-import org.zkoss.zkplus.spring.DelegatingVariableResolver;
+import org.zkoss.zkplus.spring.SpringUtil;
 
 /**
  * @author zkessentials store
@@ -24,8 +24,7 @@ public class WorkbenchInit implements Initiator {
 	 */
 	public void doInit(Page page, @SuppressWarnings("rawtypes") Map arg) throws Exception {
 		if(userCredentialManager==null){
-			userCredentialManager = (UserCredentialManager) 
-			new DelegatingVariableResolver().resolveVariable("userCredentialManager");
+			userCredentialManager = (UserCredentialManager)SpringUtil.getBean("userCredentialManager");
 		}
 		if (!userCredentialManager.isAuthenticated()) {
 			Executions.getCurrent().sendRedirect("login.zul");
