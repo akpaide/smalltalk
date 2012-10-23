@@ -16,8 +16,8 @@ import org.zkoss.springdemo.dao.UserDAO;
  * 
  */
 @Component
-@Scope(value="session")
-public class UserCredentialManager implements Serializable{
+@Scope("session")
+public class UserCredentialManager{
 
 	private static final long serialVersionUID = 4789033910089502945L;
 
