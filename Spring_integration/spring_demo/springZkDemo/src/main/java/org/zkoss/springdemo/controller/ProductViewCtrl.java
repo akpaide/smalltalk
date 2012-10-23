@@ -5,7 +5,7 @@ import java.util.List;
 import org.zkoss.bind.BindUtils;
 import org.zkoss.springdemo.bean.Product;
 import org.zkoss.springdemo.service.ProductManager;
-import org.zkoss.springdemo.service.ShoppingCartSessionImpl;
+import org.zkoss.springdemo.service.ShoppingCartManager;
 import org.zkoss.springdemo.web.OverQuantityException;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.select.SelectorComposer;
@@ -32,7 +32,7 @@ public class ProductViewCtrl extends SelectorComposer<Div> {
 	private ProductManager productManager;
 	
 	@WireVariable
-	private ShoppingCartSessionImpl shoppingCart;
+	private ShoppingCartManager shoppingCart;
 	/**
 	 * 
 	 */

@@ -1,76 +1,72 @@
-/* ShoppingCartMgmt_backup.java
-
-	Purpose:
-		
-	Description:
-		
-	History:
-		Aug 13, 2012, Created by Ian Tsai(Zanyking)
-
-Copyright (C) 2010 Potix Corporation. All Rights Reserved.
-
-{{IS_RIGHT
-	This program is distributed under ZOL in the hope that
-	it will be useful, but WITHOUT ANY WARRANTY.
-}}IS_RIGHT
-*/
 package org.zkoss.springdemo.service;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 import org.zkoss.springdemo.bean.CartItem;
 import org.zkoss.springdemo.bean.Product;
-import org.zkoss.springdemo.dao.CartitemDAO;
 import org.zkoss.springdemo.web.OverQuantityException;
 
 /**
+ * This is an in-memory approach of Shopping Cart implementation.<br>
+ * In this case, shopping cart won't be stored in the 
  * @author Ian Y.T Tsai(zanyking)
- *
  */
-public class ShoppingCartManager implements ShoppingCart, Serializable{
+@Component("shoppingCart")
+@Scope("session")
+public class ShoppingCartManager implements ShoppingCart, Serializable {
 	
-	private static final long serialVersionUID = -7101071351087319250L;
-
-	private CartitemDAO cartitemDAO;
-	
+	@Autowired
 	private UserCredentialManager userCredentialManager;
+
+	private static final long serialVersionUID = 464821961483850854L;
+
+	private Map<Long, CartItem> items = 
+		Collections.synchronizedMap(new LinkedHashMap<Long, CartItem>());
+
+	
 	private String description;
 	
-	@Override
+	
+	
 	public String getDescription() {
 		return description;
 	}
-	@Override
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	private Long getUserId(){
-		if(!userCredentialManager.isAuthenticated())
-			throw new UnAuthenticatedException();
-		return userCredentialManager.getUser().getId();
-	}
+
 	public List<CartItem> getItems() {
-		List<CartItem> citems = cartitemDAO.findByUser(getUserId());
-		return citems;
+		return new ArrayList<CartItem>(items.values());
 	}
 
 	private CartItem getItem(long prodId) {
-		return cartitemDAO.findByProduct(getUserId(), prodId);
+		return items.get(prodId);
 	}
 
+	private void add(CartItem item) {
+		items.put(item.getProduct().getId(), item);
+	}
 
-	public void add(Product prod, int amount)
-			throws OverQuantityException {
-		
-		CartItem cItem = this.getItem(prod.getId());
-		validate(cItem, prod, amount);
-		if (cItem == null) {
-			cItem = new CartItem(getUserId(), prod);
+	public void add(Product prod, int amount) throws OverQuantityException {
+
+		CartItem item = this.getItem(prod.getId());
+		validate(item, prod, amount);
+		if (item == null) {
+			this.add(item = new CartItem(
+					userCredentialManager.getUser().getId(), prod));
+			
+			item.add(amount);
+		} else {
+			item.add(amount);
 		}
-		cItem.add(amount);
-		cartitemDAO.insertUpdate(cItem);
 	}
 
 	private static void validate(CartItem item, Product prod, int amount)
@@ -85,16 +81,16 @@ public class ShoppingCartManager implements ShoppingCart, Serializable{
 	}
 
 	public void remove(CartItem cartItem) {
-		cartitemDAO.delete(cartItem);
+		items.remove(cartItem.getProduct().getId());
 	}
 
 	public void clear() {
-		cartitemDAO.clear(getUserId());
+		items.clear();
 	}
 
 	public float getTotalPrice() {
 		float subTotal = 0;
-		for (CartItem item : getItems()) {
+		for (CartItem item : items.values()) {
 			subTotal += item.getProduct().getPrice() * item.getAmount();
 		}
 		return subTotal;
