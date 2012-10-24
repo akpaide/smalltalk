@@ -21,7 +21,7 @@ import org.zkoss.springdemo.web.OverQuantityException;
  */
 @Component("shoppingCart")
 @Scope("session")
-public class ShoppingCartManager implements ShoppingCart, Serializable {
+public class ShoppingCartManager implements ShoppingCart{
 	
 	@Autowired
 	private UserCredentialManager userCredentialManager;
@@ -31,10 +31,7 @@ public class ShoppingCartManager implements ShoppingCart, Serializable {
 	private Map<Long, CartItem> items = 
 		Collections.synchronizedMap(new LinkedHashMap<Long, CartItem>());
 
-	
 	private String description;
-	
-	
 	
 	public String getDescription() {
 		return description;
