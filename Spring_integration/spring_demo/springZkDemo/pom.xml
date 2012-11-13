@@ -70,11 +70,6 @@
 		</dependency>
 
 		<!-- Spring -->
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId>
-			<version>2.2.2</version>
-		</dependency>
             
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -123,33 +118,13 @@
 			<version>${commons-logging.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>${commons-fileupload.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>${commons-io.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zk</artifactId>
-			<version>${zk.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zkplus</artifactId>
-			<version>${zk.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zkbind</artifactId>
-			<version>${zk.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zul</artifactId>
 			<version>${zk.version}</version>
 		</dependency>
 		<dependency>
@@ -159,22 +134,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zkex</artifactId>
-			<version>${zk.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zkmax</artifactId>
-			<version>${zk.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.zkoss.common</groupId>
-			<artifactId>zcommon</artifactId>
-			<version>${zk.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.zkoss.common</groupId>
-			<artifactId>zweb</artifactId>
 			<version>${zk.version}</version>
 		</dependency>
 		<dependency>
@@ -202,33 +162,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>     
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>1.0.1.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-annotations</artifactId>
-			<version>3.5.6-Final</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-		    		<artifactId>slf4j-api</artifactId>
-				</exclusion>
-			</exclusions> 
-        </dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-commons-annotations</artifactId>
-            <version>3.2.0.Final</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-		    		<artifactId>slf4j-api</artifactId>
-				</exclusion>
-			</exclusions> 
-        </dependency>
         <!--
         <dependency>
 		    <groupId>org.hibernate</groupId>
@@ -250,11 +183,6 @@
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>2.2.6</version>
-		</dependency>
-		<dependency>
-			<groupId>javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.12.1.GA</version>
 		</dependency>
 		
 		
