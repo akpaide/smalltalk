@@ -7,10 +7,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-	<description><![CDATA[Java Two]]></description>
-	<display-name>ZK-Java-TWO</display-name>
-
-	<!-- //// -->
 	<!-- ZK -->
 	<listener>
 		<description>ZK listener for session cleanup</description>
